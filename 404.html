@@ -36,9 +36,9 @@
         extend: {
           colors: {
             store: {
-              DEFAULT: '#f3a4b5',
-              light:   '#fce3e8',
-              dark:    '#d97090'
+              DEFAULT: 'var(--store)',
+              light:   'var(--store-light)',
+              dark:    'var(--store-dark)'
             }
           },
           fontFamily: {
@@ -51,13 +51,21 @@
           boxShadow: {
             'soft':   '0 2px 20px rgba(0,0,0,0.06)',
             'card':   '0 4px 24px rgba(0,0,0,0.08)',
-            'store':  '0 8px 24px rgba(243,164,181,0.45)',
+            'store':  'var(--store-shadow)',
           }
         }
       }
     }
   </script>
   <style type="text/tailwindcss">
+    /* ── Default brand tokens (overridden at runtime by StoreService) ───────── */
+    :root {
+      --store:        #f3a4b5;
+      --store-light:  #fce3e8;
+      --store-dark:   #d97090;
+      --store-shadow: 0 8px 24px rgba(243,164,181,0.45);
+    }
+
     @layer base {
       html { scroll-behavior: smooth; }
       body {
@@ -132,7 +140,7 @@
       .text-balance { text-wrap: balance; }
       /* Gradient text */
       .text-gradient {
-        background: linear-gradient(135deg, #d97090 0%, #f3a4b5 100%);
+        background: linear-gradient(135deg, var(--store-dark) 0%, var(--store) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -142,6 +150,6 @@
 <link rel="stylesheet" href="styles.ef46db3751d8e999.css"></head>
 <body>
   <app-root></app-root>
-<script src="runtime.4fe4215987f149ca.js" type="module"></script><script src="polyfills.cdedb4bc05cf2075.js" type="module"></script><script src="main.4ecba91d3d9fb523.js" type="module"></script>
+<script src="runtime.7c1917f4ef23fdcf.js" type="module"></script><script src="polyfills.cdedb4bc05cf2075.js" type="module"></script><script src="main.4ecba91d3d9fb523.js" type="module"></script>
 
 </body></html>
